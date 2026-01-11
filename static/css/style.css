@@ -1,0 +1,357 @@
+:root {
+    --violet: #8B5CF6;
+    --mint: #10B981;
+    --text-dark: #1F2937;
+    --bg-light: #F9FAFB;
+}
+
+body {
+    background-color: #ffffff;
+    color: var(--text-dark);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, var(--violet), var(--mint));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
+
+.btn-gradient {
+    background: linear-gradient(135deg, var(--violet), var(--mint));
+    color: white !important;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 12px;
+    font-weight: bold;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-gradient:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3);
+}
+
+/* Upload Card / Dropzone */
+.upload-card {
+    border: 2px dashed #E5E7EB;
+    border-radius: 24px;
+    padding: 40px;
+    background: #fff;
+    transition: 0.3s;
+}
+
+.upload-card:hover {
+    border-color: var(--violet);
+    background: #FDFCFE;
+}
+
+/* Progress Bars */
+.role-bar {
+    height: 8px;
+    border-radius: 10px;
+    background: #E5E7EB;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.role-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--violet), var(--mint));
+    transition: width 2s ease-out;
+}
+
+/* Badges */
+.badge-matched,
+.badge-missing {
+    padding: 6px 16px;
+    border-radius: 50px;
+    margin: 5px;
+    display: inline-block;
+    font-size: 0.85rem;
+}
+
+.badge-matched {
+    background: #D1FAE5;
+    color: #065F46;
+    border: 1px solid #10B981;
+}
+
+.badge-missing {
+    background: #FEE2E2;
+    color: #991B1B;
+    border: 1px solid #EF4444;
+}
+
+/* Instructions */
+.step-card {
+    padding: 30px;
+    border-radius: 24px;
+    border: 1px solid #eee;
+    transition: 0.4s;
+    height: 100%;
+}
+
+.step-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--violet);
+}
+
+.step-number {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, var(--violet), var(--mint));
+    color: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* FAQ Accordion */
+.accordion-item {
+    border: none;
+    margin-bottom: 12px;
+    border-radius: 15px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--bg-light);
+    color: var(--violet);
+}
+
+/* Scan Loader Overlay */
+#scan-loader {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+/* ... (Keep existing root and button variables) ... */
+
+/* Free Badge */
+.free-badge {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--mint);
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border: 1px solid var(--mint);
+}
+
+/* Template Section */
+.template-card {
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #eee;
+    transition: 0.4s;
+}
+
+.template-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.template-img {
+    height: 300px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+
+/* Feedback Section */
+.feedback-container {
+    background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+    border-radius: 30px;
+    padding: 50px;
+}
+
+textarea.form-control {
+    border-radius: 15px;
+    padding: 15px;
+    border: 2px solid #eee;
+}
+
+textarea.form-control:focus {
+    border-color: var(--violet);
+    box-shadow: none;
+}
+.form-control {
+    border: 2px solid #F3F4F6;
+    padding: 12px 15px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.form-control:focus {
+    border-color: var(--violet);
+    box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.1);
+    outline: none;
+}
+
+.feedback-container {
+    background: #ffffff;
+    border: 1px solid #f0f0f0;
+    border-radius: 40px;
+    padding: 20px;
+}
+footer a {
+    transition: 0.3s;
+}
+
+footer a:hover {
+    color: var(--violet) !important;
+    padding-left: 5px;
+}
+
+.list-unstyled li {
+    transition: 0.3s;
+}
+
+/* Star rating color */
+.text-warning {
+    color: #FFC107 !important;
+}
+.hover-violet {
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.hover-violet:hover {
+    color: var(--violet) !important;
+    transform: translateX(8px);
+    /* Moves link to the right slightly */
+}
+/* Solid Black Background */
+.bg-black {
+    background-color: #000000 !important;
+}
+
+/* Secondary Text Color for readability on black */
+.text-secondary {
+    color: #A1A1AA !important;
+    /* Soft gray */
+}
+
+/* Hover Effect: Text turns White and slides right */
+.hover-violet {
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+}
+
+.hover-violet:hover {
+    color: #ffffff !important;
+    /* White text on hover */
+    transform: translateX(10px);
+    /* Smooth slide to the right */
+    text-shadow: 0 0 8px rgba(139, 92, 246, 0.5);
+    /* Subtle violet glow */
+}
+
+/* Badge styling for black background */
+.badge.bg-dark {
+    background-color: #18181B !important;
+    font-weight: 500;
+}
+/* Increase the "Div" (Card) presence */
+.custom-card-size {
+    border-radius: 20px;
+    padding: 15px;
+    /* Adds internal space to make the div look bigger around the image */
+    transition: all 0.3s ease;
+    border: 1px solid #eee;
+}
+
+/* Create a defined box for the image to sit in */
+.image-container {
+    width: 100%;
+    height: 250px;
+    /* Adjust this height to your liking */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+    /* Light grey background to show image boundaries clearly */
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Reduce image size and ensure clarity */
+.template-img {
+    max-width: 85%;
+    /* Reduces width so it doesn't touch the edges */
+    max-height: 85%;
+    /* Reduces height */
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    /* Keeps the whole image visible without stretching */
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
+    /* Makes the resume preview 'pop' */
+}
+
+/* Hover effect to make the div feel interactive */
+.custom-card-size:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* The Large Hero Image (One image large) */
+.hero-img {
+    width: 100%;
+    max-width: 600px;
+    /*Highmax-widthforalargeappearance*/height: auto;
+    border-radius: 50px;
+    /*REDUCEDCURVE:;
+    was20px-30px,now4px*/object-fit: contain;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+}
+
+/* The Template Cards (Divs) */
+.custom-card {
+    padding: 20px;
+    border-radius: 8px;
+    /* REDUCED CURVE: a subtle professional corner */
+    background: #fff;
+    border: 1px solid #eee;
+}
+
+/* The Internal Image Container */
+.image-box {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    /* REDUCED CURVE */
+    overflow: hidden;
+}
+
+/* The Template Images themselves */
+.scaled-img {
+    max-width: 80%;
+    max-height: 85%;
+    border-radius: 2px;
+    /* VERY SHARP CURVE */
+    object-fit: contain;
+}

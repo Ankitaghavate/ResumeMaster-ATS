@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResumeMaster | 100% Free AI Resume Checker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <div id="scan-loader">
+        <div class="spinner-grow text-primary mb-3" style="width: 3rem; height: 3rem; color: #8B5CF6 !important;"></div>
+        <h4 class="fw-bold animate__animated animate__pulse animate__infinite">Performing 16 Crucial ATS Checks...</h4>
+        <p class="text-muted">Analyzing structure, keywords, and impact verbs.</p>
+    </div>
+
+    <nav class="navbar navbar-expand-lg py-3 bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" href="#">💎 ResumeMaster</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navContent">
+                <div class="ms-auto d-flex align-items-center">
+                    <span class="me-3 d-none d-md-inline free-badge">Free Forever ✨</span>
+                    <a href="#templates"
+                        class="text-decoration-none text-muted me-4 hover-violet fw-semibold">Templates</a>
+                    <a href="#faqSection" class="text-decoration-none text-muted me-4 hover-violet fw-semibold">How it
+                        works?</a>
+                    <button class="btn btn-gradient">Create Resume ⚡</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="container py-5 mt-4">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="display-3 fw-bold mb-4 animate__animated animate__fadeInUp">
+                    Is your resume <span class="gradient-text">good enough?</span>
+                </h1>
+                <p class="lead text-muted mb-4 animate__animated animate__fadeInUp animate__delay-1s">
+                    A free and fast AI resume checker doing <strong>16 crucial checks</strong> to ensure your resume is
+                    ready to perform and get you interview callbacks.
+                </p>
+
+                <div class="upload-card shadow-lg animate__animated animate__zoomIn animate__delay-1s">
+                    <form action="/" method="post" enctype="multipart/form-data" id="uploadForm">
+                        <div class="text-center mb-3">
+                            <h5 class="fw-bold">Drop your resume here or choose a file</h5>
+                            <p class="small text-muted">PDF & DOCX only. Max 2MB file size.</p>
+                        </div>
+                        <input type="file" name="resume" class="form-control mb-3" required id="resumeInput">
+                        <button type="submit" class="btn btn-gradient w-100 py-3">Start Free AI Scan 🚀</button>
+                        <p class="text-center small text-muted mt-3 mb-0">Upload Your Resume Privacy guaranteed 🔒</p>
+                    </form>
+                </div>
+            </div>
+            <div
+                class="col-lg-6 text-center d-none d-lg-block animate__animated animate__fadeInRight animate__delay-1s">
+                <img src="{{ url_for('static', filename='images/img.png') }}" class="hero-img" alt="Large Hero">
+                   
+            </div>
+        </div>
+    </header>
+
+    {% if result %}
+    <section id="results" class="container py-5">
+        <div class="card p-5 border-0 shadow-lg animate__animated animate__fadeInUp" style="border-radius: 30px;">
+            <h2 class="fw-bold mb-5 text-center">AI Intelligence Report 🔬</h2>
+            <div class="row g-5">
+                <div class="col-md-5">
+                    <h5 class="fw-bold mb-4">Top 3 Career Matches:</h5>
+                    {% for role, score in result.top_roles %}
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between">
+                            <span class="fw-bold">{{ role }}</span>
+                            <span class="gradient-text fw-bold">{{ score }}%</span>
+                        </div>
+                        <div class="role-bar">
+                            <div class="role-fill" style="width: {{ score }}%"></div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="col-md-7 border-start ps-lg-5">
+                    <h5 class="fw-bold mb-4">Skill Gap Analysis:</h5>
+                    <h6 class="text-success fw-bold mb-3">✅ Matched Skills</h6>
+                    <div class="mb-4">
+                        {% for s in result.matched %}
+                        <span class="badge-matched" style="animation-delay: {{ loop.index0 * 0.1 }}s">#{{ s }}</span>
+                        {% endfor %}
+                    </div>
+                    <h6 class="text-danger fw-bold mb-3">❌ Missing for Industry Standard</h6>
+                    <div>
+                        {% for s in result.missing %}
+                        <span class="badge-missing" style="animation-delay: {{ loop.index0 * 0.1 }}s">+ {{ s }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <section id="templates" class="container py-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Free <span class="gradient-text">ATS Templates</span></h2>
+            <p class="text-muted">Optimized for 2026 hiring standards. Click to use for free.</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="template-card card h-100">
+                    <img src="{{ url_for('static', filename='images/templates.jpg') }}" class="template-img"
+                        alt="The Minimalist Template">
+                    <div class="card-body text-center">
+                        <h6 class="fw-bold">The Minimalist</h6>
+                        <button class="btn btn-outline-dark btn-sm rounded-pill mt-2">Download</button>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-md-4">
+                <div class="template-card card h-100 border-primary">
+                    <img src="{{ url_for('static', filename='images/standard_resume.webp') }}" class="template-img"
+                        alt="Executive Pro Template">
+                    <div class="card-body text-center">
+                        <h6 class="fw-bold">Executive Pro</h6>
+                        <button class="btn btn-gradient btn-sm mt-2">Download</button>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-md-4">
+                <div class="template-card card h-100">
+                    <img src="{{ url_for('static', filename='images/resume.png') }}" class="template-img"
+                        alt="Modern Tech Template">
+                    <div class="card-body text-center">
+                        <h6 class="fw-bold">Modern Tech</h6>
+                        <button class="btn btn-outline-dark btn-sm rounded-pill mt-2">Download</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container py-5">
+        <h2 class="fw-bold text-center mb-5">How to Build a <span class="gradient-text">Winning Resume</span></h2>
+        <div class="row g-4 text-start">
+            <div class="col-md-4">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h5 class="fw-bold">ATS-Friendly Layout</h5>
+                    <p class="small text-muted">Use a single-column layout. Avoid images or tables inside your
+                        experience section as AI scanners often skip them.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h5 class="fw-bold">Keyword Optimization</h5>
+                    <p class="small text-muted">Identify hard skills from the job post (e.g., Python, Sales) and
+                        integrate them naturally into your bullet points.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h5 class="fw-bold">Quantified Impact</h5>
+                    <p class="small text-muted">Start every bullet with an action verb (e.g., 'Developed') and include
+                        measurable numbers (%, $).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container py-5">
+        <div class="feedback-container shadow-sm border">
+            <div class="row align-items-center p-4">
+                <div class="col-lg-6">
+                    <h2 class="fw-bold mb-3">Help us improve <span class="gradient-text">ResumeMaster</span></h2>
+                    <p class="text-muted">Since this is a <strong>free project</strong>, your feedback helps us stay
+                        alive. What features should we build next?</p>
+                </div>
+                <div class="col-lg-6">
+                    <form action="/" method="post">
+                        <textarea name="feedback" class="form-control mb-3" rows="3"
+                            placeholder="Tell us your thoughts..." required></textarea>
+                        <button type="submit" class="btn btn-gradient w-100">Send Feedback ✉️</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+<section id="faqSection" class="container py-5 my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Frequently Asked <span class="gradient-text">Questions</span></h2>
+                <p class="text-muted">Everything you need to know about ATS and ResumeMaster.</p>
+            </div>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#f1">
+                            What does the 16-point check actually analyze?
+                        </button>
+                    </h2>
+                    <div id="f1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Our AI checks for: Keyword density, contact information presence, font scanability, section
+                            heading standard, file type compatibility, action verb usage, quantifying results, date
+                            formatting, and 8 other proprietary industry standards.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#f2">
+                            Is it really 100% Free?
+                        </button>
+                    </h2>
+                    <div id="f2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            <strong>Yes.</strong> ResumeMaster is a free community project. There are no paywalls, no
+                            "premium" tiers, and no credit card required. We believe career tools should be accessible
+                            to everyone.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#f3">
+                            Should I include a photo or my full address?
+                        </button>
+                    </h2>
+                    <div id="f3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            <strong>No.</strong> Modern ATS guidelines recommend excluding photos to prevent bias. For
+                            addresses, only include your City and State. Full street addresses are no longer required
+                            and can be a privacy risk.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#f4">
+                            How often should I scan my resume?
+                        </button>
+                    </h2>
+                    <div id="f4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            You should scan your resume every time you tailor it for a specific job description. Even
+                            small changes in keywords can significantly impact your match score.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contactSection" class="container py-5 mb-5">
+    <div class="feedback-container shadow-lg">
+        <div class="row g-5 align-items-center p-2 p-md-4">
+            <div class="col-lg-5">
+                <h2 class="fw-bold mb-4">Get in <span class="gradient-text">Touch</span></h2>
+                <p class="text-muted mb-4">Have a technical issue or want to partner with our free project? Drop us a
+                    message and our team will get back to you within 24 hours.</p>
+
+                <div class="d-flex align-items-center mb-3">
+                    <div class="step-number me-3 mb-0" style="width: 35px; height: 35px;">📍</div>
+                    <span>Global Remote Project</span>
+                </div>
+                <div class="d-flex align-items-center mb-3">
+                    <div class="step-number me-3 mb-0" style="width: 35px; height: 35px;">✉️</div>
+                    <span>support@resumemaster.ai</span>
+                </div>
+                <div class="d-flex align-items-center">
+                    <div class="step-number me-3 mb-0" style="width: 35px; height: 35px;">🌍</div>
+                    <span>Proudly Open Source</span>
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <div class="card border-0 p-4 shadow-sm" style="border-radius: 20px;">
+                    <form action="/" method="post">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label small fw-bold">Full Name</label>
+                                <input type="text" name="name" class="form-control" placeholder="John Doe" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label small fw-bold">Email Address</label>
+                                <input type="email" name="email" class="form-control" placeholder="john@example.com"
+                                    required>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label small fw-bold">Message / Feedback</label>
+                                <textarea name="message" class="form-control" rows="4"
+                                    placeholder="How can we help you?" required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-gradient w-100 py-3 mt-2">Send Free Inquiry
+                                    🚀</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section class="container py-5 mt-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">User <span class="gradient-text">Feedback</span></h2>
+            <p class="text-muted">Join 10,000+ job seekers who improved their resumes for free.</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm p-4 h-100" style="border-radius: 20px; background: #fdfbff;">
+                    <div class="mb-3 text-warning">★★★★★</div>
+                    <p class="small italic text-muted">"The 16-point check found keywords I completely missed. I got an
+                        interview call just 2 days after updating my resume!"</p>
+                    <div class="fw-bold mt-auto">— Sarah J., Data Analyst</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm p-4 h-100" style="border-radius: 20px; background: #fafffc;">
+                    <div class="mb-3 text-warning">★★★★★</div>
+                    <p class="small italic text-muted">"I can't believe this tool is free. The template gallery is better
+                        than the paid ones I've seen elsewhere."</p>
+                    <div class="fw-bold mt-auto">— Marc K., Software Engineer</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm p-4 h-100" style="border-radius: 20px; background: #fcfaff;">
+                    <div class="mb-3 text-warning">★★★★★</div>
+                    <p class="small italic text-muted">"The skill gap analysis is a game changer. It told me exactly what
+                        certifications I needed to list."</p>
+                    <div class="fw-bold mt-auto">— Elena R., Project Manager</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black text-white pt-5 pb-4 mt-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h4 class="fw-bold mb-3 text-white">💎 ResumeMaster</h4>
+                    <p class="text-secondary small">
+                        An open-source AI project. Making career success 100% free for everyone. 🌍
+                    </p>
+                    <div class="mt-4">
+                        <span class="badge bg-dark border border-secondary py-2 px-3">Free Forever ✨</span>
+                    </div>
+                </div>
+    
+                <div class="col-lg-4">
+                    <h6 class="fw-bold mb-3 text-uppercase small text-secondary" style="letter-spacing: 1px;">Quick Links 🔗
+                    </h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#templates"
+                                class="text-decoration-none text-secondary small hover-violet">Resume Templates 📄</a></li>
+                        <li class="mb-2"><a href="#faqSection"
+                                class="text-decoration-none text-secondary small hover-violet">ATS Guide 📚</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-secondary small hover-violet">Score
+                                Calculator 📈</a></li>
+                    </ul>
+                </div>
+    
+                <div class="col-lg-4">
+                    <h6 class="fw-bold mb-3 text-uppercase small text-secondary" style="letter-spacing: 1px;">Let's Connect
+                        👋</h6>
+                    <div class="d-flex flex-column gap-3">
+                        <a href="https://github.com/" target="_blank"
+                            class="text-decoration-none text-secondary small hover-violet">
+                            <i class="fab fa-github me-2"></i> Check out my code on **GitHub** 💻
+                        </a>
+                        <a href="https://linkedin.com/" target="_blank"
+                            class="text-decoration-none text-secondary small hover-violet">
+                            <i class="fab fa-linkedin me-2"></i> Let's connect on **LinkedIn** 🤝
+                        </a>
+                        <a href="mailto:support@resumemaster.ai"
+                            class="text-decoration-none text-secondary small hover-violet">
+                            <i class="fas fa-envelope me-2"></i> Drop me a message via **Email** 📧
+                        </a>
+                    </div>
+                </div>
+            </div>
+    
+            <hr class="my-5 border-secondary opacity-25">
+    
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="small text-secondary mb-0">© 2026 ResumeMaster. Built with ❤️ for you.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="small text-secondary mb-0">Black Edition UI ⚫</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('uploadForm').onsubmit = function () {
+            document.getElementById('scan-loader').style.display = 'flex';
+        };
+        {% if result %}
+        window.onload = function () {
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+        };
+        {% endif %}
+    </script>
+</body>
+
+</html>
