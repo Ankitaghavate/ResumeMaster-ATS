@@ -102,6 +102,7 @@ ResumeMaster provides an intelligent resume analysis platform that:
 ---
 
 ## 📁 Project Folder Structure
+---
 ResumeMaster-AI/
 │
 ├── app.py # Flask application (main backend)
