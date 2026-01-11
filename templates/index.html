@@ -68,45 +68,56 @@
             </div>
         </div>
     </header>
+{% if result %}
+<section id="results" class="container py-5">
+    <div class="card p-5 border-0 shadow-lg animate__animated animate__fadeInUp" style="border-radius: 8px;">
+        <h2 class="fw-bold mb-4 text-center">AI Intelligence Report 🔬</h2>
 
-    {% if result %}
-    <section id="results" class="container py-5">
-        <div class="card p-5 border-0 shadow-lg animate__animated animate__fadeInUp" style="border-radius: 30px;">
-            <h2 class="fw-bold mb-5 text-center">AI Intelligence Report 🔬</h2>
-            <div class="row g-5">
-                <div class="col-md-5">
-                    <h5 class="fw-bold mb-4">Top 3 Career Matches:</h5>
-                    {% for role, score in result.top_roles %}
-                    <div class="mb-4">
-                        <div class="d-flex justify-content-between">
-                            <span class="fw-bold">{{ role }}</span>
-                            <span class="gradient-text fw-bold">{{ score }}%</span>
-                        </div>
-                        <div class="role-bar">
-                            <div class="role-fill" style="width: {{ score }}%"></div>
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
-                <div class="col-md-7 border-start ps-lg-5">
-                    <h5 class="fw-bold mb-4">Skill Gap Analysis:</h5>
-                    <h6 class="text-success fw-bold mb-3">✅ Matched Skills</h6>
-                    <div class="mb-4">
-                        {% for s in result.matched %}
-                        <span class="badge-matched" style="animation-delay: {{ loop.index0 * 0.1 }}s">#{{ s }}</span>
-                        {% endfor %}
-                    </div>
-                    <h6 class="text-danger fw-bold mb-3">❌ Missing for Industry Standard</h6>
-                    <div>
-                        {% for s in result.missing %}
-                        <span class="badge-missing" style="animation-delay: {{ loop.index0 * 0.1 }}s">+ {{ s }}</span>
-                        {% endfor %}
-                    </div>
+        <div class="row mb-5 justify-content-center">
+            <div class="col-md-6 text-center">
+                <div class="p-3 bg-light" style="border-radius: 4px; border-left: 5px solid #8B5CF6;"> <span
+                        class="text-muted small fw-bold text-uppercase">Detected Experience Level</span>
+                    <h3 class="gradient-text fw-bold mb-0">{{ result.experience }}</h3>
                 </div>
             </div>
         </div>
-    </section>
-    {% endif %}
+
+        <div class="row g-5">
+            <div class="col-md-5">
+                <h5 class="fw-bold mb-4">Top 3 Career Matches:</h5>
+                {% for role, score in result.top_roles %}
+                <div class="mb-4">
+                    <div class="d-flex justify-content-between">
+                        <span class="fw-bold">{{ role }}</span>
+                        <span class="gradient-text fw-bold">{{ score }}%</span>
+                    </div>
+                    <div class="role-bar" style="border-radius: 2px;">
+                        <div class="role-fill" style="width: {{ score }}%; border-radius: 2px;"></div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="col-md-7 border-start ps-lg-5">
+                <h5 class="fw-bold mb-4">Skill Gap Analysis:</h5>
+                <h6 class="text-success fw-bold mb-3">✅ Matched Skills</h6>
+                <div class="mb-4">
+                    {% for s in result.matched %}
+                    <span class="badge-matched"
+                        style="border-radius: 4px; animation-delay: {{ loop.index0 * 0.1 }}s">#{{ s }}</span>
+                    {% endfor %}
+                </div>
+                <h6 class="text-danger fw-bold mb-3">❌ Missing for Industry Standard</h6>
+                <div>
+                    {% for s in result.missing %}
+                    <span class="badge-missing" style="border-radius: 4px; animation-delay: {{ loop.index0 * 0.1 }}s">+
+                        {{ s }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
 
     <section id="templates" class="container py-5">
         <div class="text-center mb-5">
