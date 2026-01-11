@@ -102,25 +102,24 @@ ResumeMaster provides an intelligent resume analysis platform that:
 ---
 
 ## 📁 Project Folder Structure
-
 ResumeMaster-AI/
 │
-├── app.py
-├── requirements.txt
-├── best_model.pkl
-├── tfidf.pkl
-├── label_encoder.pkl
+├── app.py # Flask application (main backend)
+├── requirements.txt # Project dependencies
+├── best_model.pkl # Trained Logistic Regression model
+├── tfidf.pkl # TF-IDF vectorizer
+├── label_encoder.pkl # Label encoder for job roles
 │
-├── templates/
-│   ├── index.html
-│   └── result.html
+├── templates/ # HTML templates
+│ ├── index.html # Resume upload page
+│ └── result.html # Result display page
 │
-├── static/
-│   └── css/
-│       └── style.css
+├── static/ # Static files
+│ └── css/
+│ └── style.css # Application styling
 │
-├── AI_Resume_Screening.ipynb
-└── UpdatedResumeDataSet.csv
+├── AI_Resume_Screening.ipynb # Model training & experimentation notebook
+└── UpdatedResumeDataSet.csv # Dataset used for training
 
 ---
 
