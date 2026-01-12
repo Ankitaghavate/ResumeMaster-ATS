@@ -137,8 +137,7 @@ http://127.0.0.1:5000/
 
 ## 🌐 Live Demo
 
-A demo may be available at: https://resumemaster-ai.onrender.com  
-(Free hosting — may sleep after inactivity)
+A demo may be available at: https://resume-master--ank26.replit.app
 
 ---
 
