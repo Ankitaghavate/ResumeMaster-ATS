@@ -1,0 +1,69 @@
+Name: Ankita Ghavate
+Email: ankita.ghavate@example.com
+Phone: +91-XXXXXXXXXX
+LinkedIn: linkedin.com/in/ankita-ghavate
+GitHub: github.com/ankita-ghavate
+
+Objective:
+---------
+Seeking a role as an Automation Test Engineer to leverage my skills in test automation frameworks, scripting, and quality assurance to improve software reliability and efficiency.
+
+Skills:
+-------
+- Test Automation using Selenium WebDriver
+- Java / Python scripting for test automation
+- TestNG, JUnit, PyTest frameworks
+- API testing using Postman and Rest Assured
+- Continuous Integration (Jenkins)
+- Version Control: Git, GitHub
+- Agile / Scrum methodologies
+- Manual Testing: Functional, Regression, UAT
+- Bug tracking and reporting (JIRA, Bugzilla)
+- SQL queries for backend testing
+
+Education:
+----------
+Bachelor of Technology in Computer Science
+VIIT Pune, India
+2021 - 2025
+CGPA: 8.5/10
+
+Certifications:
+---------------
+- Selenium WebDriver with Java – Udemy
+- Automation Testing with Python – Coursera
+- QA & Test Automation Fundamentals – Unstop
+
+Work Experience:
+----------------
+Intern, QA Automation
+Infosys Springboard, Pune
+Jan 2025 – Jun 2025
+- Developed automation scripts using Selenium WebDriver and TestNG.
+- Performed API testing with Postman and Rest Assured.
+- Wrote SQL queries to validate backend data.
+- Reported defects using JIRA and participated in daily scrum meetings.
+- Executed regression test suites and reduced manual testing effort by 40%.
+
+Projects:
+---------
+1. **E-commerce Website Automation**
+   - Automated login, search, and checkout workflows using Selenium WebDriver with Java.
+   - Implemented Page Object Model for maintainable test scripts.
+
+2. **API Testing Project**
+   - Tested REST APIs using Postman and Python scripts.
+   - Validated response data against database records using SQL.
+
+3. **CI/CD Pipeline Integration**
+   - Integrated automated test scripts with Jenkins for nightly builds.
+   - Generated test reports and sent email notifications on test results.
+
+Awards & Achievements:
+----------------------
+- Winner, Internal Hackathon on QA Automation
+- Best Intern Award – Infosys Springboard
+
+Technical Keywords (for resume screening):
+------------------------------------------
+Automation Testing, Selenium WebDriver, Java, Python, TestNG, JUnit, PyTest, API Testing, Postman, Rest Assured, Jenkins, Git, Agile, Scrum, Manual Testing, Regression Testing, JIRA, SQL

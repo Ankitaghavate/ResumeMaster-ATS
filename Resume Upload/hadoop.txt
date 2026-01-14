@@ -1,0 +1,70 @@
+Name: Ankita Ghavate
+Email: ankita.ghavate@example.com
+Phone: +91-XXXXXXXXXX
+LinkedIn: linkedin.com/in/ankita-ghavate
+GitHub: github.com/ankita-ghavate
+
+Objective:
+---------
+Seeking a challenging role as a Big Data / Hadoop Developer to leverage my skills in Hadoop ecosystem, data processing, and analytics to deliver scalable solutions.
+
+Skills:
+-------
+- Hadoop Distributed File System (HDFS)
+- MapReduce programming
+- Hive, Pig, HBase
+- Spark (PySpark, Spark SQL)
+- Sqoop, Flume, Kafka
+- Data warehousing and ETL pipelines
+- Linux/Unix commands and shell scripting
+- SQL, Python
+- Data analysis and visualization
+- Cluster management and optimization
+
+Education:
+----------
+Bachelor of Technology in Computer Science
+VIIT Pune, India
+2021 - 2025
+CGPA: 8.6/10
+
+Certifications:
+---------------
+- Big Data Hadoop Developer – Udemy
+- Apache Spark with Scala & Python – Coursera
+- Data Analytics & Visualization – Unstop
+
+Work Experience:
+----------------
+Intern, Big Data Analytics
+Infosys Springboard, Pune
+Jan 2025 – Jun 2025
+- Developed MapReduce programs for large-scale data processing.
+- Created Hive tables and wrote optimized HiveQL queries.
+- Integrated Flume and Sqoop for data ingestion from various sources.
+- Built PySpark scripts for batch processing of structured and unstructured data.
+- Worked on HDFS cluster management and troubleshooting.
+
+Projects:
+---------
+1. **Hadoop-Based Log Analysis**
+   - Processed large server logs using MapReduce and Hive.
+   - Generated daily error and usage reports.
+   - Improved processing time by 30% using optimized MapReduce jobs.
+
+2. **Big Data ETL Pipeline**
+   - Built end-to-end ETL pipeline using Sqoop, Flume, Hive, and Spark.
+   - Loaded data into HDFS, transformed with Spark, and stored results in Hive tables.
+
+3. **Sentiment Analysis with Hadoop & Spark**
+   - Analyzed social media text data for sentiment using PySpark.
+   - Applied Hadoop MapReduce for preprocessing and Spark MLlib for analysis.
+
+Awards & Achievements:
+----------------------
+- Winner, AI & Data Science Hackathon – VIIT Pune
+- Silver Rank – State-level Student Recruitment Program (VCRP Latur)
+
+Technical Keywords (for resume screening):
+------------------------------------------
+Hadoop, HDFS, MapReduce, Hive, Pig, HBase, Spark, PySpark, Spark SQL, Sqoop, Flume, Kafka, ETL, Big Data, Cluster, Linux, SQL, Data Analytics

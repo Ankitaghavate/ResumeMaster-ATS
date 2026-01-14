@@ -1,0 +1,103 @@
+ANKITA GHAVATE
+India
+Email: yourmail@gmail.com
+
+Phone: XXXXXXXXXX
+GitHub: github.com/yourusername
+LinkedIn: linkedin.com/in/yourprofile
+
+OBJECTIVE
+Motivated Web Developer with hands-on experience in building and testing web applications using Python Flask. Strong understanding of web fundamentals, backend logic, and application testing. Looking for an entry-level web developer or web tester role.
+
+TECHNICAL SKILLS
+
+Web Technologies:
+
+HTML5
+
+CSS3
+
+Basic JavaScript
+
+Backend Development:
+
+
+
+REST-style routing
+
+Database:
+
+MySQL (Basic queries)
+
+Web Testing & Debugging:
+
+Manual testing
+
+Form validation testing
+
+File upload testing
+
+Error handling and debugging
+
+Tools:
+
+Git & GitHub
+
+VS Code
+
+Hugging Face Spaces
+
+PROJECTS
+
+Resume Screening Web Application
+Technologies: Flask, Python, HTML, CSS
+
+Developed a web application 
+
+Created multiple routes and templates for user interaction.
+
+Implemented resume upload functionality (PDF and TXT).
+
+Validated form inputs and handled errors gracefully.
+
+Displayed processed resume content on web pages.
+
+Deployed the application on a cloud platform.
+
+INTERNSHIP / TRAINING
+
+Web Development Training
+
+Learned Flask application structure and routing.
+
+Practiced form handling, file uploads, and template rendering.
+
+Performed testing for different user inputs and edge cases.
+
+CERTIFICATIONS
+
+Artificial Intelligence – Infosys Springboard
+
+Python Programming – VJ Tech Academy
+
+Web Development Basics – Self Learning
+
+EDUCATION
+
+Bachelor of Engineering / Technology
+Your College Name
+Year
+
+SOFT SKILLS
+
+Attention to Detail
+
+Bug Identification
+
+Logical Thinking
+
+Communication Skills
+
+INTERVIEW ONE-LINER
+
+“I have built and tested Flask-based web applications focusing on backend logic, form handling, and deployment.”

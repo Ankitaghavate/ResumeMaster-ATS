@@ -1,0 +1,69 @@
+Name: Ankita Ghavate
+Email: ankita.ghavate@example.com
+Phone: +91-XXXXXXXXXX
+LinkedIn: linkedin.com/in/ankita-ghavate
+GitHub: github.com/ankita-ghavate
+
+Objective:
+---------
+Seeking a challenging role as an Electrical Engineer to apply my knowledge of electrical systems, circuit design, and power management in industrial and commercial projects.
+
+Skills:
+-------
+- Electrical circuit design and analysis
+- Power systems and distribution
+- PLC programming and SCADA systems
+- AutoCAD Electrical
+- Control systems and instrumentation
+- Electrical safety standards and compliance
+- Renewable energy systems (Solar, Wind)
+- Testing and troubleshooting of electrical equipment
+- MATLAB / Simulink for simulations
+- Project planning and documentation
+
+Education:
+----------
+Bachelor of Technology in Electrical Engineering
+VIIT Pune, India
+2021 - 2025
+CGPA: 8.5/10
+
+Certifications:
+---------------
+- Electrical Design & Drafting – Udemy
+- PLC Programming & SCADA – Coursera
+- Renewable Energy Fundamentals – Unstop
+
+Work Experience:
+----------------
+Intern, Electrical Engineering
+XYZ Power Solutions, Pune
+Jan 2025 – Jun 2025
+- Assisted in designing electrical circuits and control panels.
+- Monitored and tested power distribution systems.
+- Implemented PLC programs for industrial automation.
+- Conducted site inspections to ensure safety compliance.
+- Prepared reports on energy efficiency and system performance.
+
+Projects:
+---------
+1. **Smart Home Electrical Automation**
+   - Designed automated lighting and appliance control system using PLC and sensors.
+   - Developed control logic and tested functionality in a lab setup.
+
+2. **Solar Power System Installation**
+   - Assisted in designing and installing a 5 kW rooftop solar panel system.
+   - Monitored energy generation and connected to grid.
+
+3. **Power Distribution Network Analysis**
+   - Analyzed load distribution and optimized power efficiency using MATLAB.
+   - Proposed improvements to reduce energy losses.
+
+Awards & Achievements:
+----------------------
+- Winner, State-level Electrical Design Competition
+- Intern of the Month – XYZ Power Solutions
+
+Technical Keywords (for resume screening):
+------------------------------------------
+Electrical Engineering, Circuit Design, Power Systems, PLC, SCADA, AutoCAD Electrical, Control Systems, Renewable Energy, MATLAB, Energy Efficiency, Troubleshooting, Electrical Safety, Instrumentation

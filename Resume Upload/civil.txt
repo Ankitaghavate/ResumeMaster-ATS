@@ -1,0 +1,69 @@
+Name: Ankita Ghavate
+Email: ankita.ghavate@example.com
+Phone: +91-XXXXXXXXXX
+LinkedIn: linkedin.com/in/ankita-ghavate
+GitHub: github.com/ankita-ghavate
+
+Objective:
+---------
+Seeking a position as a Civil Engineer to utilize my technical skills in structural design, project management, and construction supervision to deliver high-quality projects on time.
+
+Skills:
+-------
+- Structural analysis and design
+- AutoCAD, STAAD Pro, Revit
+- Construction management
+- Project planning and scheduling (MS Project)
+- Site supervision and quality control
+- Estimation and cost management
+- Soil mechanics and geotechnical engineering
+- Building materials and construction techniques
+- Safety and regulatory compliance
+- Microsoft Office (Excel, Word, PowerPoint)
+
+Education:
+----------
+Bachelor of Technology in Civil Engineering
+VIIT Pune, India
+2021 - 2025
+CGPA: 8.4/10
+
+Certifications:
+---------------
+- Civil Engineering Design & Drafting – Udemy
+- Construction Project Management – Coursera
+- AutoCAD & STAAD Pro – Unstop
+
+Work Experience:
+----------------
+Intern, Civil Engineering
+XYZ Construction Pvt Ltd, Pune
+Jan 2025 – Jun 2025
+- Assisted in structural design of residential and commercial buildings.
+- Prepared drawings using AutoCAD and Revit.
+- Monitored construction sites for quality, safety, and adherence to project schedules.
+- Assisted in quantity estimation and cost analysis.
+- Conducted soil testing and site inspections.
+
+Projects:
+---------
+1. **Residential Building Design**
+   - Designed a 4-storey residential building using STAAD Pro.
+   - Conducted structural analysis and prepared construction drawings.
+
+2. **Road Construction Project**
+   - Assisted in planning and supervision of a 5 km road construction.
+   - Monitored material usage and ensured compliance with standards.
+
+3. **Bridge Load Analysis**
+   - Conducted load calculations for a small bridge using AutoCAD and Excel.
+   - Prepared detailed report and design recommendations.
+
+Awards & Achievements:
+----------------------
+- Winner, State-level Civil Engineering Project Competition
+- Intern of the Month – XYZ Construction Pvt Ltd
+
+Technical Keywords (for resume screening):
+------------------------------------------
+Civil Engineering, Structural Design, AutoCAD, STAAD Pro, Revit, Project Management, Construction, Soil Testing, Quantity Estimation, Scheduling, Site Supervision, Safety, Building Materials
