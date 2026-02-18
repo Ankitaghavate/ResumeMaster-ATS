@@ -12,7 +12,6 @@
 </head>
 
 <body>
-
     <div id="scan-loader">
         <div class="spinner-grow text-primary mb-3" style="width: 3rem; height: 3rem; color: #8B5CF6 !important;"></div>
         <h4 class="fw-bold animate__animated animate__pulse animate__infinite">Performing 16 Crucial ATS Checks...</h4>
@@ -45,15 +44,15 @@
                     Is your resume <span class="gradient-text">good enough?</span>
                 </h1>
                 <p class="lead text-muted mb-4 animate__animated animate__fadeInUp animate__delay-1s">
-                    A free and fast AI resume checker doing <strong>16 crucial checks</strong> to ensure your resume is
-                    ready to perform and get you interview callbacks.
+                    A free and fast AI resume checker that analyzes your resume to ensure it is ATS-friendly, well-structured, and ready to
+                    get interview callbacks.
                 </p>
 
                 <div class="upload-card shadow-lg animate__animated animate__zoomIn animate__delay-1s">
                     <form action="/" method="post" enctype="multipart/form-data" id="uploadForm">
                         <div class="text-center mb-3">
                             <h5 class="fw-bold">Drop your resume here or choose a file</h5>
-                            <p class="small text-muted">PDF & DOCX only. Max 2MB file size.</p>
+                            <p class="small text-muted">PDF, DOCX, and TXT formats. Max 2MB file size.</p>
                         </div>
                         <input type="file" name="resume" class="form-control mb-3" required id="resumeInput">
                         <button type="submit" class="btn btn-gradient w-100 py-3">Start Free AI Scan 🚀</button>
@@ -68,59 +67,110 @@
             </div>
         </div>
     </header>
-
-    {% if result %}
-    <section id="results" class="container py-5">
-        <div class="card p-5 border-0 shadow-lg animate__animated animate__fadeInUp" style="border-radius: 30px;">
-            <h2 class="fw-bold mb-5 text-center">AI Intelligence Report 🔬</h2>
-            <div class="row g-5">
-                <div class="col-md-5">
-                    <h5 class="fw-bold mb-4">Top 3 Career Matches:</h5>
-                    {% for role, score in result.top_roles %}
-                    <div class="mb-4">
-                        <div class="d-flex justify-content-between">
-                            <span class="fw-bold">{{ role }}</span>
-                            <span class="gradient-text fw-bold">{{ score }}%</span>
-                        </div>
-                        <div class="role-bar">
-                            <div class="role-fill" style="width: {{ score }}%"></div>
-                        </div>
-                    </div>
-                    {% endfor %}
+{% if result %}
+<section id="results" class="container py-5">
+    <div class="card p-5 border-0 shadow-lg animate__animated animate__fadeInUp" style="border-radius: 8px;">
+        
+        <h2 class="fw-bold mb-4 text-center">AI Intelligence Report 🔬</h2>
+<!--         
+        <div class="row mb-4 justify-content-center">
+            <div class="col-md-6 text-center">
+                <div class="p-4 bg-dark text-white shadow" style="border-radius:10px;">
+                    <h6 class="text-uppercase small">ATS Score</h6>
+                    <h1 class="fw-bold">{{ result.ats_score }}%</h1>
+                    <p class="mb-0">
+                        Resume Strength:
+                        <span class="fw-bold text-warning">{{ result.strength }}</span>
+                    </p>
                 </div>
-                <div class="col-md-7 border-start ps-lg-5">
-                    <h5 class="fw-bold mb-4">Skill Gap Analysis:</h5>
-                    <h6 class="text-success fw-bold mb-3">✅ Matched Skills</h6>
-                    <div class="mb-4">
-                        {% for s in result.matched %}
-                        <span class="badge-matched" style="animation-delay: {{ loop.index0 * 0.1 }}s">#{{ s }}</span>
-                        {% endfor %}
-                    </div>
-                    <h6 class="text-danger fw-bold mb-3">❌ Missing for Industry Standard</h6>
-                    <div>
-                        {% for s in result.missing %}
-                        <span class="badge-missing" style="animation-delay: {{ loop.index0 * 0.1 }}s">+ {{ s }}</span>
-                        {% endfor %}
-                    </div>
+            </div>
+        </div> -->
+        
+        <div class="row mb-5 justify-content-center">
+            <div class="col-md-6 text-center">
+                <div class="p-3 bg-light" style="border-radius: 4px; border-left: 5px solid #8B5CF6;">
+                    <span class="text-muted small fw-bold text-uppercase">Detected Experience Level</span>
+                    <h3 class="gradient-text fw-bold mb-0">{{ result.experience }}</h3>
                 </div>
             </div>
         </div>
-    </section>
-    {% endif %}
+        
+        <div class="row g-5">
+            <div class="col-md-5">
+                <h5 class="fw-bold mb-4">Top 3 Career Matches:</h5>
+                {% for role, score in result.top_roles %}
+                <div class="mb-4">
+                    <div class="d-flex justify-content-between">
+                        <span class="fw-bold">{{ role }}</span>
+                        <span class="gradient-text fw-bold">{{ score }}%</span>
+                    </div>
+                    <div class="role-bar" style="border-radius: 2px;">
+                        <div class="role-fill" style="width: {{ score }}%; border-radius: 2px;"></div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        
+            <div class="col-md-7 border-start ps-lg-5">
+                <h5 class="fw-bold mb-4">Skill Gap Analysis:</h5>
+        
+                <h6 class="text-success fw-bold mb-3">✅ Matched Skills</h6>
+                <div class="mb-4">
+                    {% for s in result.matched %}
+                    <span class="badge-matched" style="border-radius: 4px; animation-delay: {{ loop.index0 * 0.1 }}s">#{{ s
+                        }}</span>
+                    {% endfor %}
+                </div>
+                <hr class="my-5">
+        
+                <h6 class="text-danger fw-bold mb-3">❌ Missing for Industry Standard</h6>
+                <div>
+                    {% for s in result.missing %}
+                    <span class="badge-missing" style="border-radius: 4px; animation-delay: {{ loop.index0 * 0.1 }}s">+{{ s
+                        }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+{% endif %}
+
+{% if result %}
+<section id="chatSection" class="container py-5">
+    <div class="card shadow-lg border-0 p-4" style="border-radius: 20px;">
+        <h3 class="fw-bold mb-4 text-center">
+            Ask AI About Your Resume 🤖
+        </h3>
+
+        <div id="chatBox" class="mb-3"
+            style="height:300px; overflow-y:auto; background:#f8f9fa; padding:15px; border-radius:10px;">
+        </div>
+
+        <div class="input-group">
+            <input type="text" id="userInput" class="form-control"
+                placeholder="Ask something like: What skills should I improve?">
+            <button class="btn btn-gradient" onclick="sendMessage()">Ask</button>
+        </div>
+    </div>
+</section>
+{% endif %}
+
 
     <section id="templates" class="container py-5">
         <div class="text-center mb-5">
             <h2 class="fw-bold">Free <span class="gradient-text">ATS Templates</span></h2>
-            <p class="text-muted">Optimized for 2026 hiring standards. Click to use for free.</p>
-        </div>
+            <p class="text-muted">Optimized for 2026 hiring standards.</p>
+        </div>  
         <div class="row g-4">
             <div class="col-md-4">
                 <div class="template-card card h-100">
                     <img src="{{ url_for('static', filename='images/templates.jpg') }}" class="template-img"
                         alt="The Minimalist Template">
                     <div class="card-body text-center">
-                        <h6 class="fw-bold">The Minimalist</h6>
-                        <button class="btn btn-outline-dark btn-sm rounded-pill mt-2">Download</button>
+                        <h6 class="fw-bold">Clean Classic</h6>
+                        <!-- <button class="btn btn-outline-dark btn-sm rounded-pill mt-2">Download</button> -->
                     </div>
                 </div>
             </div>
@@ -131,7 +181,7 @@
                         alt="Executive Pro Template">
                     <div class="card-body text-center">
                         <h6 class="fw-bold">Executive Pro</h6>
-                        <button class="btn btn-gradient btn-sm mt-2">Download</button>
+                        <!-- <button class="btn btn-gradient btn-sm mt-2">Download</button> -->
                     </div>
                 </div>
             </div>
@@ -141,8 +191,8 @@
                     <img src="{{ url_for('static', filename='images/resume.png') }}" class="template-img"
                         alt="Modern Tech Template">
                     <div class="card-body text-center">
-                        <h6 class="fw-bold">Modern Tech</h6>
-                        <button class="btn btn-outline-dark btn-sm rounded-pill mt-2">Download</button>
+                        <h6 class="fw-bold">Tech Edge</h6>
+                        <!-- <button class="btn btn-outline-dark btn-sm rounded-pill mt-2">Download</button> -->
                     </div>
                 </div>
             </div>
@@ -282,7 +332,7 @@
                 </div>
                 <div class="d-flex align-items-center mb-3">
                     <div class="step-number me-3 mb-0" style="width: 35px; height: 35px;">✉️</div>
-                    <span>support@resumemaster.ai</span>
+                    <span>ghavateankita@gmail.com</span>
                 </div>
                 <div class="d-flex align-items-center">
                     <div class="step-number me-3 mb-0" style="width: 35px; height: 35px;">🌍</div>
@@ -296,11 +346,11 @@
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <label class="form-label small fw-bold">Full Name</label>
-                                <input type="text" name="name" class="form-control" placeholder="John Doe" required>
+                                <input type="text" name="name" class="form-control" placeholder="Ankita Ghavate" required>
                             </div>
                             <div class="col-md-6">
                                 <label class="form-label small fw-bold">Email Address</label>
-                                <input type="email" name="email" class="form-control" placeholder="john@example.com"
+                                <input type="email" name="email" class="form-control" placeholder="ghavateankita@gmail.com"
                                     required>
                             </div>
                             <div class="col-12">
@@ -383,17 +433,17 @@
                     <h6 class="fw-bold mb-3 text-uppercase small text-secondary" style="letter-spacing: 1px;">Let's Connect
                         👋</h6>
                     <div class="d-flex flex-column gap-3">
-                        <a href="https://github.com/" target="_blank"
+                        <a href="https://github.com/Ankitaghavate" target="_blank"
                             class="text-decoration-none text-secondary small hover-violet">
-                            <i class="fab fa-github me-2"></i> Check out my code on **GitHub** 💻
+                            <i class="fab fa-github me-2"></i> Check out my code on GitHub 💻
                         </a>
-                        <a href="https://linkedin.com/" target="_blank"
+                        <a href="nkedin.com/in/ankita-ghavate/" target="_blank"
                             class="text-decoration-none text-secondary small hover-violet">
-                            <i class="fab fa-linkedin me-2"></i> Let's connect on **LinkedIn** 🤝
+                            <i class="fab fa-linkedin me-2"></i> Let's connect on LinkedIn 🤝
                         </a>
-                        <a href="mailto:support@resumemaster.ai"
+                        <a href="ghavateankita@gmail.com"
                             class="text-decoration-none text-secondary small hover-violet">
-                            <i class="fas fa-envelope me-2"></i> Drop me a message via **Email** 📧
+                            <i class="fas fa-envelope me-2"></i> Drop me a message via Email 📧
                         </a>
                     </div>
                 </div>
@@ -421,6 +471,38 @@
             document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
         };
         {% endif %}
+
+        function sendMessage() {
+                let input = document.getElementById("userInput");
+                let message = input.value.trim();
+                if (!message) return;
+
+                let chatBox = document.getElementById("chatBox");
+
+                chatBox.innerHTML += `
+        <div class="mb-2">
+            <strong>You:</strong> ${message}
+        </div>
+    `;
+
+                fetch("/chat", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ message: message })
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        chatBox.innerHTML += `
+            <div class="mb-3 text-primary">
+                <strong>AI:</strong> ${data.response}
+            </div>
+        `;
+                        chatBox.scrollTop = chatBox.scrollHeight;
+                    });
+
+                input.value = "";
+            }
+
     </script>
 </body>
 
