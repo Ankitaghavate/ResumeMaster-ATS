@@ -139,6 +139,7 @@ Manual resume screening and candidate guidance are:
 ```bash
 git clone https://github.com/Ankitaghavate/ResumeMaster-ATS.git
 cd ResumeMaster-ATS
+```
 
 
 2. Create a virtual environment (recommended)
@@ -169,7 +170,7 @@ http://127.0.0.1:5000/
 
 ## 🌐 Live Demo
 
-A demo may be available at: https://resume-master--ank26.replit.app
+A demo may be available at: https://resume-master--ank26.replit.app | https://resumemaster-ats-1.onrender.com
 
 ---
 
