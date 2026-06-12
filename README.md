@@ -62,6 +62,13 @@ Manual resume screening and candidate guidance are:
 
 ---
 
+## 🏗️ System Architecture
+
+<p align="center">
+  <img width="1536" height="1024" alt="ChatGPT Image Jun 12, 2026, 03_37_45 PM" src="https://github.com/user-attachments/assets/7c3bd8b6-44a0-42a9-8f37-308b62a59601" />
+
+</p>
+
 ## 🧠 Machine Learning & NLP Techniques
 
 **Resume Screening:**
@@ -102,7 +109,6 @@ Manual resume screening and candidate guidance are:
 
 **Other Tools:**
 - Git & GitHub for version control
-- Optional: pdfkit for generating downloadable PDF reports
 
 ---
 
