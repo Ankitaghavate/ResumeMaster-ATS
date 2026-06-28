@@ -176,7 +176,7 @@ http://127.0.0.1:5000/
 
 ## 🌐 Live Demo
 
-A demo may be available at: https://resume-master--ank26.replit.app | https://resumemaster-ats-1.onrender.com
+A demo may be available at: https://resume-master-ats--ankita22420053.replit.app/
 
 ---
 
